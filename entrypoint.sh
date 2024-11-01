@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ffmpeg -y -re -i https://download.blender.org/durian/trailer/sintel_trailer-1080p.mp4 \
+ffmpeg -y -stream_loop -1 -re -i https://download.blender.org/durian/trailer/sintel_trailer-1080p.mp4 \
   -preset slow -g 48 -sc_threshold 0 \
   -map 0:0 -map 0:1 -map 0:0 -map 0:1 \
   -s:v:0 640x360 -c:v:0 libx264 -b:v:0 365k \
