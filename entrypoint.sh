@@ -8,7 +8,7 @@ ffmpeg -y -stream_loop -1 -re -i https://download.blender.org/durian/trailer/sin
   -c:a copy \
   -var_stream_map "v:0,a:0 v:1,a:1" \
   -master_pl_name master.m3u8 \
-  -f hls -hls_time 4 -hls_list_size 8 -hls_delete_threshold 10 -hls_flags round_durations -hls_flags program_date_time \
+  -f hls -hls_time 4 -hls_list_size 8 -hls_flags round_durations+program_date_time+delete_segments \
   -hls_segment_filename "/data/loop/v%v/fileSequence%d.ts" /data/loop/v%v/media.m3u8 &
 
 cd /data/ && python -m http.server ${PORT:-8080}
