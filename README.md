@@ -1,14 +1,14 @@
 # docker-testsrc-hls-live
 
-A Docker image to generate a live HLS test source. Source is generated using ffmpeg
+A Docker image to generate a HLS VoD test source. Source is generated using ffmpeg
 
 ## Running
 
 ```
-docker run --rm -p 8080:8080 eyevinntechnology/testsrc-hls-live
+docker run --rm -p 8080:8080 eyevinntechnology/testsrc-hls-vod
 ```
 
-You will then have an HLS live test source available at `http://localhost:8080/loop/master.m3u8`. 
+You will then have an HLS live test source available at `http://localhost:8080/vod/master.m3u8`. 
 
 ## License
 
